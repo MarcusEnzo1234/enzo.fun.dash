@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <title>Enzo Dash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Inter:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="shell">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">⬛</div>
+        <div>
+          <div class="title">Enzo Dash</div>
+          <div class="subtitle">Tap / Space to jump • Collect coins • Buy skins</div>
+        </div>
+      </div>
+
+      <div class="hud">
+        <div class="pill">🏁 <span id="score">0</span></div>
+        <div class="pill">⭐ Best: <span id="best">0</span></div>
+        <div class="pill">🪙 <span id="coins">0</span></div>
+        <button class="pillBtn" id="fsBtn" title="Fullscreen">⛶ Fullscreen</button>
+        <button class="pillBtn" id="muteBtn" title="Sound">🔊</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="frame">
+        <canvas id="game" width="960" height="540"></canvas>
+
+        <!-- Tap overlay for mobile -->
+        <div class="tapHint" id="tapHint">Tap to Jump</div>
+
+        <!-- Menus -->
+        <div class="overlay" id="menu">
+          <div class="panel">
+            <h1>Enzo Dash</h1>
+            <p>Survive as long as you can. Jump over spikes and gaps, collect coins, and unlock skins.</p>
+
+            <div class="menuBtns">
+              <button class="big" id="startBtn">Start</button>
+              <button class="big" id="shopBtn">Shop</button>
+              <button class="big" id="howBtn">How to Play</button>
+              <button class="big" id="creditsBtn">Credits</button>
+            </div>
+
+            <div class="tiny" id="creditsText" style="display:none;">GameMaker: Enzo</div>
+          </div>
+        </div>
+
+        <div class="overlay" id="over" style="display:none;">
+          <div class="panel">
+            <h1>Game Over</h1>
+            <p id="overText">Nice run!</p>
+            <div class="menuBtns">
+              <button class="big" id="retryBtn">Retry</button>
+              <button class="big" id="menuBtn">Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay" id="shop" style="display:none;">
+          <div class="panel wide">
+            <div class="row">
+              <div>
+                <h1>Skin Shop</h1>
+                <p>Earn coins in runs. Buy skins, then Equip.</p>
+              </div>
+              <button class="small" id="closeShopBtn">Close</button>
+            </div>
+
+            <div class="shopGrid" id="shopGrid"></div>
+
+            <div class="tiny">Tip: Longer runs = more coins 🪙</div>
+          </div>
+        </div>
+
+        <div class="overlay" id="how" style="display:none;">
+          <div class="panel">
+            <h1>How to Play</h1>
+            <p>
+              • <b>Jump:</b> Space / Up arrow / Tap<br>
+              • Avoid spikes + walls<br>
+              • Collect coins to buy skins<br>
+              • Fullscreen button works on PC + mobile
+            </p>
+            <div class="menuBtns">
+              <button class="big" id="closeHowBtn">Close</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
