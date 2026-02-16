@@ -216,7 +216,7 @@ const player = {
   rot: 0,
 };
 
-let speed = 6.0;
+let speed = 5.0;
 let dist = 0;
 let score = 0;
 let runCoins = 0;
